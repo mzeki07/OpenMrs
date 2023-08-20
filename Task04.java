@@ -19,6 +19,7 @@ public class Task04 {
         location.click();
         login.click();
 
+//try 1
 //        System.out.println(driver.getTitle());
         if (driver.getTitle().equals("Home")){
             System.out.println("the test is passed");

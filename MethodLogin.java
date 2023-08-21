@@ -1,12 +1,10 @@
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Task08 {
-
-    public static void main(String[] args) {
+public class MethodLogin {
+    public static void loginMethod(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
@@ -20,15 +18,15 @@ public class Task08 {
         password.click();
         location.click();
         login.click();
-        WebElement Admin = driver.findElement(By.xpath("//i[contains(@class, 'icon-caret-down appui')]"));
-        Admin.click();
-        MethodLogin_Wait.myWait(4);
 
 
-
-
-
-        driver.quit();
     }
 
+    public static void myWait(int seconds){
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
+}

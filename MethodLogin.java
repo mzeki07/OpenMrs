@@ -3,9 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Task04 {
-
-    public static void main(String[] args) {
+public class MethodLogin {
+    public static void loginMethod(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
@@ -21,12 +20,13 @@ public class Task04 {
         login.click();
 
 
-//        System.out.println(driver.getTitle());
-        if (driver.getTitle().equals("Home")){
-            System.out.println("the test is passed");
-        }else
-            System.out.println("the test is failed");
-
     }
 
+    public static void myWait(int seconds){
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

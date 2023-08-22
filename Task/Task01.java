@@ -17,7 +17,7 @@ public class Task01 extends BaseDriver {
                 System.out.println("You are on a different page.");
             }
 
-            // Close the browser
+
             driver.quit();
 
 

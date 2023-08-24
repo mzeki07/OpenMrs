@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Task08 {
+
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.openmrs.org/openmrs/login.htm");
@@ -39,6 +40,8 @@ public class Task08 {
 
         driver.quit();
 //
+
+
 
 
 

@@ -2,6 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 public class Task10 {
     public static void main(String[] args) {
@@ -20,10 +22,16 @@ public class Task10 {
         password.click();
         location.click();
         login.click();
-        WebElement Admin = driver.findElement(By.xpath("//i[contains(@class, 'icon-caret-down appui')]"));
-        Admin.click();
-        WebElement MyAccount =driver.findElement(By.xpath("//a[contains(., 'My Account')]"));
-        MyAccount.click();
+        WebElement AdminButton = driver.findElement(By.xpath("//li[contains(@class, 'identifier')]"));
+
+        Actions actions = new Actions(driver);
+        Action action = actions.moveToElement(AdminButton).build();
+        action.perform();
+
+        MethodLogin_Wait.myWait(2);
+
+        WebElement myAccount = driver.findElement(By.id("user-account-menu"));
+        myAccount.click();
 
        WebElement Mylanguage = driver.findElement(By.xpath("//a[contains(@class, 'button app big') and contains(., 'My Languages')]"));
        Mylanguage.click();

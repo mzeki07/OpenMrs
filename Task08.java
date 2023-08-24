@@ -3,6 +3,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Task08 {
     public static void main(String[] args) {
@@ -19,9 +22,27 @@ public class Task08 {
         password.click();
         location.click();
         login.click();
-        WebElement Admin = driver.findElement(By.xpath("//i[contains(@class, 'icon-caret-down appui')]"));
-        Admin.click();
-        MethodLogin_Wait.myWait(4);
+        WebElement AdminButton = driver.findElement(By.xpath("//li[contains(@class, 'identifier')]"));
+
+        Actions actions = new Actions(driver);
+       Action action = actions.moveToElement(AdminButton).build();
+       action.perform();
+
+        MethodLogin_Wait.myWait(2);
+
+        WebElement myAccount = driver.findElement(By.id("user-account-menu"));
+        myAccount.click();
+
+
+
+        MethodLogin_Wait.myWait(3);
+
+        driver.quit();
+//
+
+
+
+
 
 
 

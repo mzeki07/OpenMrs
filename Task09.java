@@ -42,7 +42,7 @@ public class Task09 {
         }
 
         MethodLogin_Wait.myWait(4);
-        //just
+        //just change
     }
 
 }

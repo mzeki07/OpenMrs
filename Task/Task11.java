@@ -1,4 +1,4 @@
 package Task;
 
-public class Task11 {
-}
+public class Task11 {}
+
